@@ -1,0 +1,25 @@
+---
+title: "Us countries"
+author: "Neel patel"
+format: html
+---
+```{r}
+library(tidyverse)
+library(primer.data)
+
+```
+
+
+```{r}
+#|warning: false
+#|message: false
+#|label: plot
+connectedness |>
+  drop_na() |>
+  ggplot(mapping = aes(x = population, y = connectedness)) + geom_point() + 
+scale_x_log10(labels = scales::comma_format()) + geom_smooth() + 
+  labs(title = "Us Country populations versus Economic connectedness", subtitle = "population size does not matter to EC", x = "population", y = "Economic Connectedness", caption = "oppertunity Insights")
+ 
+```
+
+.
